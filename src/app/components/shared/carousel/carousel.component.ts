@@ -11,6 +11,6 @@ export class CarouselComponent {
   images = [
     {id: 1, label: 'Spaghetti al Pomodoro'},
     {id: 2, label: 'Tagliata di Manzo'},
-    {id: 1, label: 'Tiramisù classico'}
+    {id: 3, label: 'Tiramisù classico'}
   ];
 }

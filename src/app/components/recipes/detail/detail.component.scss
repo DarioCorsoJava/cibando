@@ -1,0 +1,49 @@
+@import '../../../styles/colors.scss';
+
+.container-detail-image {
+  width: 100%;
+  height: 350px;
+  background-color: #0a0a23;
+  display: flex;
+}
+.container-detail-image img {
+  width: 100%;
+  text-align: center;
+  object-fit: cover;
+}
+
+.container-detail-text {
+  margin: 20px;
+  font-size: small;
+  color: $secondary-color-1;
+
+  .container-detail-text-title {
+    color: $primary-color-1;
+    font-size: large;
+    font-weight: bold;
+  }
+}
+
+.container-detail-difficulty {
+  margin: 20px;
+  font-weight: bold;
+
+  p {
+    margin: 0px;
+  }
+
+  .container-detail-difficulty-image {
+    width: 100px;
+  }
+}
+
+.container-detail-footer {
+  margin: 5px;
+  text-align: right;
+  font-size: small;
+
+  p {
+    color: $secondary-color-1;
+  }
+}
+
