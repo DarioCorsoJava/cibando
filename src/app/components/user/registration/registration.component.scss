@@ -1,0 +1,21 @@
+.col-image-container {
+  background: url('https://cdn.stoneline.de/media/b0/c4/37/1721744157/Smash-Burger.png?ts=1722324471');
+}
+
+.card-container {
+  border-radius: 25px;
+  border: 2px, solid, rgb(170, 23, 23);
+}
+
+.card {
+  overflow: hidden;
+}
+
+.registration-row {
+  margin-bottom: 0.5rem;
+
+  .registration-row-icon {
+    font-size: 1.5rem;
+    margin: 0.5rem;
+  }
+}

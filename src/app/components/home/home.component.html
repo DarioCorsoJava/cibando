@@ -5,4 +5,40 @@
   <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas optio voluptatibus laborum dicta, quis accusamus omnis a maiores numquam, laboriosam, iste esse sequi ad voluptates autem eius nam et possimus. </p>
 </div>
 
-<app-recipes></app-recipes>
+<h2> Ultime ricette </h2>
+<app-recipe-card [recipes]="ricette"> </app-recipe-card>
+<!-- <button (click)="openModal(modaleUno, '453', 'Spaghetti')"> Elimina Prodotto </button>
+<button (click)="openModal(modaleRegistrazione)"> Registrazione </button> -->
+
+<!-- Modale Uno -->
+<!-- <ng-template #modaleUno #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title"> Elimina prodotto </h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<p> Sei sicuro di voler eliminare il prodotto {{this.nomeModale}}? </p>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-primary" (click)="modal.close()" ngbAutofocus> Elimina </button>
+    <button type="button" class="btn btn-secondary" (click)="modal.dismiss()"> Annulla </button>
+	</div>
+</ng-template> -->
+
+<!-- MODALE REGISTRAZIONE -->
+<ng-template #modaleRegistrazione #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title"> Grazie per esserti registrato </h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<h3> Ecco i tuoi dati: </h3>
+    <ul>
+      <li> Nome: {{this.datiRegistrazione['nome']}} </li>
+      <li> Email: {{this.datiRegistrazione['email']}} </li>
+    </ul>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">Close</button>
+	</div>
+</ng-template>

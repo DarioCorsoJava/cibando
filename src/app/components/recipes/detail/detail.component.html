@@ -1,14 +1,23 @@
-<div class="container-detail-image">
-  <img src="{{ricetta.image}}"/>
+<div *ngIf="ricetta; else noData">
+  <div class="container-detail-image">
+    <img src="{{ricetta.image}}"/>
+  </div>
+  <div class="container-detail-text">
+    <h2 class="container-detail-text-title"> {{ricetta.title}} </h2>
+    <p> {{ricetta.description}} </p>
+  </div>
+  <div class="container-detail-difficulty">
+    <p> Difficoltà: </p>
+    <img [src]="percorsoStelline + ricetta.difficulty + '.png'" class="container-detail-difficulty-image" alt="Difficoltà ricetta: {{ricetta.difficulty}}">
+  </div>
+  <div class="container-detail-footer">
+    <p> Ricetta pubblicata il {{ricetta.date}} </p>
+  </div>
 </div>
-<div class="container-detail-text">
-  <h2 class="container-detail-text-title"> {{ricetta.title}} </h2>
-  <p> {{ricetta.description}} </p>
+
+<!-- Reference template -->
+<ng-template #noData>
+<div>
+  <p> Spiacenti, ricetta non trovata! </p>
 </div>
-<div class="container-detail-difficulty">
-  <p> Difficoltà: </p>
-  <!-- <img class="container-detail-difficulty-image" src="../../../../assets/images/difficolta-3.png"> -->
-</div>
-<div class="container-detail-footer">
-  <p> Ricetta pubblicata il {{ricetta.date}} </p>
-</div>
+</ng-template>

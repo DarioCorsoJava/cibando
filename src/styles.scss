@@ -23,3 +23,10 @@ body {
   background-color: $primary-color-1;
   border-color: $primary-color-1;
 }
+
+.is-danger {
+  position: relative;
+  color: rgb(161, 10, 10);
+  top: -10px;
+  font-size: small;
+}
