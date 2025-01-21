@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { RECIPES } from '../mocks/recipes.mock';
+import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Recipe } from '../models/recipes.model';
 
@@ -7,14 +7,19 @@ import { Recipe } from '../models/recipes.model';
   providedIn: 'root'
 })
 export class RecipeService {
-  constructor() { }
+  apiBaseUrl = '/api/recipes'
+
+  constructor(private http: HttpClient) { }
 
   getRecipes(): Observable<Recipe[]> {
-    return of(RECIPES);
+    return this.http.get<Recipe[]>(`${this.apiBaseUrl}/`);
   }
 
-  getDetail(id: Number): Observable<Recipe | undefined> {
-    const recipe = RECIPES.find(ricetta => ricetta._id === id);
-    return of(recipe);
+  getDetail(id: string): Observable<Recipe | undefined> {
+    return this.http.get<Recipe>(`${this.apiBaseUrl}/${id}`);
+  }
+
+  addRecipe(recipe: any): Observable<any> {
+    return this.http.post<any>(`${this.apiBaseUrl}/`, recipe);
   }
 }

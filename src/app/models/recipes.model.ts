@@ -6,4 +6,5 @@ export interface Recipe {
   difficulty: number;
   date: string;
   published: boolean;
+  createdAt: Date;
 }

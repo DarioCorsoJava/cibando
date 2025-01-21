@@ -1,0 +1,15 @@
+<div class="modal-body">
+  <form [formGroup]="addRecipeForm" (ngSubmit)="onModalSubmit()">
+		<h3> Informazioni ricetta: </h3>
+    <ul>
+      <li class="row"> <input type="text" pInputText placeholder="Titolo" formControlName="title"> </li>
+      <li class="row"> <textarea pInputText placeholder="Descrizione" formControlName="description"> </textarea> </li>
+      <li class="row"> <p-dropdown [options]="[0, 1, 2, 3, 4, 5]" placeholder="Seleziona una difficoltà"
+        formControlName="difficulty"> </p-dropdown> </li>
+
+      <li class="row"> <input type="text" pInputText placeholder="Immagine" formControlName="image"> </li>
+    </ul>
+    <button type="submit" class="btn btn-primary"> Aggiungi </button>
+  </form>
+</div>
+

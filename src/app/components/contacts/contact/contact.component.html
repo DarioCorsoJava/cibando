@@ -1,0 +1,49 @@
+<!-- ESEMPIO UTILIZZO REACTIVE FORMS -->
+
+<div class="container h-100">
+  <div class="col-lg-12 col-xl-12">
+    <div class="card text-black card-container">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-md-12 col-lg-12 col-xl-12 order-2 order-lg-1">
+          <h3 style="text-align: center; margin: 10px;"> Richiesta di Contatto </h3>
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="d-flex flex-row align-items-center row-item">
+              <i class="pi pi-user row-icon"> </i>
+              <input type="text" placeholder="Nome" formControlName="name">
+            </div>
+            <div class="d-flex flex-row align-items-center row-item">
+              <i class="pi pi-envelope row-icon"> </i>
+              <input type="text" placeholder="Email" formControlName="email">
+            </div>
+            <div class="d-flex flex-row align-items-center row-item">
+              <i class="pi pi-address-book row-icon"> </i>
+              <input type="text" placeholder="Oggetto" formControlName="object">
+            </div>
+            <div class="row row-item">
+              <textarea type="text" placeholder="Il tuo messaggio" rows="10" cols="50" formControlName="message"> </textarea>
+            </div>
+            <div class="row row-item">
+              <button type="button" class="btn btn-primary" (click)="onSubmit()"> Invia! </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODALE CONTATTI -->
+<ng-template #modaleContatti #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title"> Preview dell'Email </h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+    <h2> {{this.datiModale['email']}} </h2>
+    <h6> {{this.datiModale['object']}} </h6>
+		<p> {{this.datiModale['message']}} </p>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-primary" (click)="modal.close()" ngbAutofocus> Chiudi </button>
+	</div>
+</ng-template>

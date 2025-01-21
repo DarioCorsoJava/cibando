@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, OnInit, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { RecipeService } from '../../services/recipe.service';
@@ -20,7 +20,6 @@ export class HomeComponent implements AfterViewInit{
   evidenziato = false;
   idModale = '';
   nomeModale = '';
-
 
   constructor(private recipeService: RecipeService,
               private userService: UserService,
@@ -49,7 +48,7 @@ export class HomeComponent implements AfterViewInit{
     this.evidenziato = !this.evidenziato;
   }
 
-  openModal(content: any, id?: string, nome?: string, cognome?: string) {
+  openModal(content: any, id?: string, nome?: string) {
     this.idModale = id;
     this.nomeModale = nome;
     this.modalService.open(content, {centered: true,
@@ -62,8 +61,4 @@ export class HomeComponent implements AfterViewInit{
         console.log("Errore");
       });
   }
-
-  // closeModal() {
-  //   this.modalService.dismissAll();
-  // }
 }

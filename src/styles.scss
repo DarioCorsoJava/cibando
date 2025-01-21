@@ -30,3 +30,11 @@ body {
   top: -10px;
   font-size: small;
 }
+
+#container-cards {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  gap: 15px;
+}

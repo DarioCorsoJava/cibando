@@ -26,7 +26,7 @@ export class DetailComponent implements OnInit {
 
   //Primo metodo di recupero dati dall'URL
   // onGetDetail() {
-  //   const id = Number(this.activatedRoute.snapshot.queryParamMap.get('_id'))
+  //   const id = this.activatedRoute.snapshot.queryParamMap.get('_id');
 
   //   if(id) {
   //     //Il subscribe viene fatto sugli Observables
@@ -42,7 +42,7 @@ export class DetailComponent implements OnInit {
   //Secondo metodo di recupero dati dall'URL, preferibile nel caso ci siano più parametri
   onGetDetail():void {
     this.activatedRoute.params.subscribe(urlParams => {
-      const id = Number(urlParams['_id']);
+      const id = urlParams['_id'];
       if(id) {
         this.recipeService.getDetail(id).subscribe(res => this.ricetta = res);
       }
