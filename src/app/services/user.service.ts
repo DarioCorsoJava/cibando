@@ -1,10 +1,16 @@
 import { Injectable } from '@angular/core';
-import { ReplaySubject, Subject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Observable, ReplaySubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+  apiBaseUrl = 'api/users'
   datiUtente = new Subject();
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  saveUser(user: any): Observable<any> {
+    return this.http.post<any>(`${this.apiBaseUrl}/signup`, user);
+  }
 }

@@ -7,7 +7,7 @@ import { Recipe } from '../models/recipes.model';
   providedIn: 'root'
 })
 export class RecipeService {
-  apiBaseUrl = '/api/recipes'
+  apiBaseUrl = 'api/recipes'
 
   constructor(private http: HttpClient) { }
 

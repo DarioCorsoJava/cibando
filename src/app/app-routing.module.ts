@@ -6,6 +6,7 @@ import { RecipesComponent } from './components/recipes/recipes.component';
 import { DetailComponent } from './components/recipes/detail/detail.component';
 import { RecipesListComponent } from './components/recipes/recipes-list/recipes-list.component';
 import { RegistrationComponent } from './components/user/registration/registration.component';
+import { LoginComponent } from './components/user/login/login.component';
 import { ContactComponent } from './components/contacts/contact/contact.component';
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   ]},
   {path: 'contatti', component: ContactComponent},
   {path: 'registrazione', component: RegistrationComponent},
+  {path: 'login', component: LoginComponent},
   {path: '**', redirectTo: 'home'}
 ];
 

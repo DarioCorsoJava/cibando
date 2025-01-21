@@ -37,10 +37,9 @@ export class RecipesListComponent {
     map(response => this.totaleRicette = response)
   );
 
-  constructor() {
-    //this.getRecipes();
-  }
+  constructor() { }
 
+  /* Sezione gestione impaginazione */
   getRecipes() {
     this.recipeService.getRecipes().pipe(take(1)).subscribe({
       next: (res) => {
@@ -60,6 +59,11 @@ export class RecipesListComponent {
     this.size = event.rows;
   }
 
+  /* Sezione gestione modale */
+  onAddRecipeClick() {
+    this.openModal(this.modaleAggiuntaRicetta);
+  }
+
   openModal(content: any, id?: string, nome?: string) {
     this.modalService.open(content, {centered: true,
                                     ariaLabelledBy: "Modale di aggiunta ricetta",
@@ -70,9 +74,5 @@ export class RecipesListComponent {
       .catch((error) => {
         console.log("Errore");
       });
-  }
-
-  onAddRecipeClick() {
-    this.openModal(this.modaleAggiuntaRicetta);
   }
 }

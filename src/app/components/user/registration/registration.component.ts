@@ -29,8 +29,17 @@ export class RegistrationComponent {
 
   onSubmit() {
     console.log(this.form.value);
-    const dati = { nome: this.form.controls.name.value, email: this.form.controls.email.value }
+    const dati = { nome: this.form.controls.name.value,
+                   email: this.form.controls.email.value,
+                   password: this.form.controls.password.value }
     this.userService.datiUtente.next(dati);
-    this.routerService.navigateByUrl('home');
+    this.userService.saveUser(dati).subscribe({
+      next: (res) => {
+        this.routerService.navigateByUrl('home');
+      },
+      error: (error) => {
+        console.log(error);
+      }
+    })
   }
 }

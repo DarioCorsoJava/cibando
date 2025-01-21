@@ -1,0 +1,28 @@
+#container-login {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 50%;
+  margin: 0 auto;
+  height: 50vh;
+  justify-content: center;
+
+  .container-row {
+    margin-bottom: 15px;
+    height: 40px;
+  }
+
+  #error-message {
+    font-size: 13px;
+    color: rgb(158, 53, 53);
+    text-align: center;
+  }
+}
+
+//ng-deep entra nelle classi, un !important più forte
+:host ::ng-deep .p-inputtext {
+  border: 1px solid #ffbebe !important;
+  width: 100% !important;
+}
+
+

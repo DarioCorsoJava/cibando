@@ -10,6 +10,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { PasswordModule } from 'primeng/password';
 import { PaginatorModule } from 'primeng/paginator';
+import { FloatLabelModule } from 'primeng/floatlabel';
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
 import { DropdownModule } from 'primeng/dropdown';
 
 //Pagine
@@ -25,6 +28,7 @@ import { RecipesListComponent } from './components/recipes/recipes-list/recipes-
 import { RegistrationComponent } from './components/user/registration/registration.component';
 import { ContactComponent } from './components/contacts/contact/contact.component';
 import { AddRecipeComponent } from './components/recipes/add-recipe/add-recipe.component';
+import { LoginComponent } from './components/user/login/login.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,8 @@ import { AddRecipeComponent } from './components/recipes/add-recipe/add-recipe.c
     RecipesListComponent,
     RegistrationComponent,
     ContactComponent,
-    AddRecipeComponent
+    AddRecipeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +56,9 @@ import { AddRecipeComponent } from './components/recipes/add-recipe/add-recipe.c
     PasswordModule,
     DropdownModule,
     PaginatorModule,
+    FloatLabelModule,
+    ButtonModule,
+    InputTextModule,
     HttpClientModule
   ],
   providers: [],

@@ -24,7 +24,15 @@ export class AddRecipeComponent {
   });
 
   onModalSubmit() {
-    this.recipeService.addRecipe(this.addRecipeForm.value);
+    this.recipeService.addRecipe(this.addRecipeForm.value).subscribe({
+      next: (res) => {
+        this.ricetta = res;
+      },
+      error: (e) => {
+        console.log(e);
+      }
+    });
+
     this.routerService.navigateByUrl("ricette");
   }
 }
