@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 import { UserService } from '../../../services/user.service';
 
 @Component({
@@ -11,6 +12,7 @@ import { UserService } from '../../../services/user.service';
   styleUrl: './registration.component.scss'
 })
 export class RegistrationComponent {
+  private messageService = inject(MessageService);
   private userService = inject(UserService);
   private routerService = inject(Router);
   password: string = '';
@@ -35,6 +37,7 @@ export class RegistrationComponent {
     this.userService.datiUtente.next(dati);
     this.userService.saveUser(dati).subscribe({
       next: (res) => {
+        this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Registrazione effettuata con successo!' });
         this.routerService.navigateByUrl('home');
       },
       error: (error) => {

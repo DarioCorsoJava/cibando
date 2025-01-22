@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { PasswordModule } from 'primeng/password';
@@ -13,7 +14,11 @@ import { PaginatorModule } from 'primeng/paginator';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
+import { EditorModule } from 'primeng/editor';
 import { DropdownModule } from 'primeng/dropdown';
+import { ToastModule } from 'primeng/toast';
+
+import { MessageService } from 'primeng/api';
 
 //Pagine
 import { CarouselComponent } from './components/shared/carousel/carousel.component';
@@ -29,6 +34,7 @@ import { RegistrationComponent } from './components/user/registration/registrati
 import { ContactComponent } from './components/contacts/contact/contact.component';
 import { AddRecipeComponent } from './components/recipes/add-recipe/add-recipe.component';
 import { LoginComponent } from './components/user/login/login.component';
+import { ProfileComponent } from './components/user/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +49,8 @@ import { LoginComponent } from './components/user/login/login.component';
     RegistrationComponent,
     ContactComponent,
     AddRecipeComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -54,14 +61,16 @@ import { LoginComponent } from './components/user/login/login.component';
     FormsModule,
     ReactiveFormsModule,
     PasswordModule,
-    DropdownModule,
     PaginatorModule,
     FloatLabelModule,
     ButtonModule,
     InputTextModule,
+    EditorModule,
+    DropdownModule,
+    ToastModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

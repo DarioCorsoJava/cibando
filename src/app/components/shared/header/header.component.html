@@ -16,15 +16,16 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="contatti"> <i class="pi pi-envelope" style="font-size: 1.5rem"> </i> Contatti </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="registrazione"> <i class="pi pi-envelope" style="font-size: 1.5rem"> </i> Registrazione </a>
+        <li class="nav-item" *ngIf="authService.isAdmin()">
+          <a class="nav-link" routerLink="aggiungiRicetta"> <i class="pi pi-envelope" style="font-size: 1.5rem"> </i> Aggiungi Ricetta </a>
         </li>
         <li class="nav-item" *ngIf="!authService.isLogged()">
           <a class="nav-link" routerLink="login"> <i class="pi pi-user" style="font-size: 1.5rem"> </i> Accedi/Registrati </a>
         </li>
         <li class="nav-item autenticato" *ngIf="authService.isLogged()">
-          <div> <i class="pi pi-user" style="font-size: 1.5rem"> </i> Ciao {{user?.name}} - Profilo </div>
-          <a (click)="logout()"> Logout </a>
+          <i class="nav-link pi pi-user" style="font-size: 1.5rem;"> </i>
+          <a class="nav-link" routerLink="profilo"> Profilo </a>
+          <a class="nav-link" (click)="logout()"> Logout </a>
         </li>
       </ul>
     </div>

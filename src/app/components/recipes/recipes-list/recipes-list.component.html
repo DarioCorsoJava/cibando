@@ -1,6 +1,6 @@
-<div class="row" style="margin: 10px;">
+<!-- <div class="row" style="margin: 5px;">
   <button class="btn btn-primary" (click)="onAddRecipeClick()"> Inserisci Nuova Ricetta </button>
-</div>
+</div> -->
 <div id="container-cards">
   <div class="container-card" *ngFor="let ricetta of recipes$ | async | slice: (page * size) - size : (page * size)">
     <app-recipe-card [recipe]="ricetta" (messaggio)="riceviTitolo($event)"></app-recipe-card>
@@ -15,14 +15,16 @@
       [rowsPerPageOptions]="[2, 4, 6]" />
 </div>
 
-<!-- MODALE AGGIUNTA RICETTA -->
+<!-- MODALE AGGIUNTA RICETTA
 <ng-template #modaleAggiuntaRicetta #content let-modal>
   <div class="modal-header">
 		<h4 class="modal-title"> Aggiunta ricetta </h4>
 		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
 	</div>
+
   <app-add-recipe></app-add-recipe>
+
   <div class="modal-footer">
     <button type="button" class="btn btn-secondary" (click)="modal.dismiss('Close click')"> Annulla </button>
   </div>
-</ng-template>
+</ng-template> -->

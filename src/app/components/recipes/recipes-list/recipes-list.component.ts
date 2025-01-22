@@ -41,7 +41,7 @@ export class RecipesListComponent {
 
   /* Sezione gestione impaginazione */
   getRecipes() {
-    this.recipeService.getRecipes().pipe(take(1)).subscribe({
+    this.recipeService.getRecipes().pipe().subscribe({
       next: (res) => {
         this.ricette = res.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
       },

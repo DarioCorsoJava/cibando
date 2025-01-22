@@ -4,7 +4,7 @@
   </div>
   <div class="container-detail-text">
     <h2 class="container-detail-text-title"> {{ricetta.title}} </h2>
-    <p> {{ricetta.description}} </p>
+    <p [innerHTML]="ricetta.description"> </p>
   </div>
   <div class="container-detail-difficulty">
     <p> Difficoltà: </p>

@@ -1,14 +1,12 @@
-import { RecipeService } from './recipe.service';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { UserService } from './user.service';
 
 interface User {
   id?: string,
   name: string,
   email: string,
-  password: string,
+  role: string
 }
 
 @Injectable({
@@ -26,7 +24,7 @@ export class AuthService {
       id: res._id,
       name: res.name,
       email: res.email,
-      password: res.password
+      role: res.role
     }
 
     localStorage.setItem('user', JSON.stringify(user));
@@ -39,6 +37,10 @@ export class AuthService {
 
   isLogged(): boolean {
     return JSON.parse(localStorage.getItem('user')) !== null;
+  }
+
+  isAdmin(): boolean {
+    return (JSON.parse(localStorage.getItem('user')) !== null && JSON.parse(localStorage.getItem('user')).role === 'admin');
   }
 
   logout() {
